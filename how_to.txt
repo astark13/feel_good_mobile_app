@@ -1,0 +1,36 @@
+In order to create the ".apk" file you need a Linux environment. 
+
+!!!The script installing the prerequisites is configured for Ubuntu,
+ so you either stick to Ubuntu or modify the script!!!
+
+1. Download the folder containing all the file of the onto your Ubuntu machine.
+2. In the folder containing all the files run the following command:
+
+    bash kivy-buildozer-installer.sh
+
+3. Try if the app works
+
+    python3 main.py
+
+4. Create "buildozer.spec" file
+
+    buildozer init
+
+5. Alter the "buildozer.spec" file. The following lines need to be changed:
+
+    title = My Application --> title = How Do You Feel?
+
+    source.include_exts = py,png,jpg,kv,atlas --> source.include_exts = py,png,jpg,kv,atlas,json,txt
+
+    orientation = portratit --> orientation = all
+
+6. Run the command to create the ".apk" file
+
+    buildozer android debug
+
+    buildozer android clean debug - run this if errors occur, after the errors were fixed;
+                                    it clean what was wrong when the error occured
+
+7. In the application folder a "bin" folder appears. In there you find the ".apk" file
+
+8. Upload the ".apk" on "wetransfer.com" and download it onto your phone.
